@@ -5,9 +5,14 @@ import CoreJava.Models.Course;
 
 import java.util.List;
 
+// show all students attending courses
+// register students to additional courses
+// update the student / course list
+
 public class AttendingDAO {
 
     public List<Attending> getAttending(){
+		return null;
 
     }
 
@@ -16,6 +21,7 @@ public class AttendingDAO {
     }
 
     public List<Course> getStudentCourses(List<Course> courseList, List<Attending> attending, String studentEmail){
+		return courseList;
 
     }
 

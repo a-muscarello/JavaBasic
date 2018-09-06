@@ -2,28 +2,48 @@ package CoreJava.Models;
 
 public class Course {
 
-    public void setID(int ID){
+	private int ID;
+	private String name;
+	private String instructor;
+	
+	public Course () {
+		
+	}
+	
+	public Course(int ID, String name, String instuctor) {
 
-    }
+		this.ID = ID;
+		this.name = name;
+		this.instructor = instructor;
+	}
 
-    public int getID(){
+	public int getID() {
+		return ID;
+	}
 
-    }
+	public void setID(int ID) {
+		ID = ID;
+	}
 
-    public void setName(String name){
+	public String getName() {
+		return name;
+	}
 
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public String getName(){
+	public String getInstructor() {
+		return instructor;
+	}
 
-    }
-
-    public void setInstructor(String instructor){
-
-    }
-
-    public String getInstructor(){
-
-    }
-
+	public void setInstructor(String instructor) {
+		this.instructor = instructor;
+	}
+	
+	@Override
+	public String toString() {
+		return "Course ID: " + ID + "\t Course Name: " + name + "\t Instructor: " + instructor;
+		
+	}
 }
