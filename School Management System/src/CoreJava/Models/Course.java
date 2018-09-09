@@ -22,7 +22,7 @@ public class Course {
 	}
 
 	public void setID(int ID) {
-		ID = ID;
+		this.ID = ID;
 	}
 
 	public String getName() {
