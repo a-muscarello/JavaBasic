@@ -13,6 +13,9 @@ public class CourseDAO {
 	
     public List<Course> getAllCourses(int ID, String name, String instructor){
     	
+    		courseList.add(courseID);
+    		return coursesList.getAllCourses();
+    }
     	     try {
     	        List<Student> studentSameName = Course.get(student.name);
     	        for(Student studentEntry : studentSameName){
@@ -22,14 +25,8 @@ public class CourseDAO {
     	        }
     	     }
     	     catch(NullPointerException e){
-    	         
+    	    
     	     }
     	 }
-
-    	    
-    	
-    	
-			courseList.add(courseID);
-			return coursesList.getAllCourses();
-    }
+			
 }

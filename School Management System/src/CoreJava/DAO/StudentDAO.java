@@ -54,7 +54,7 @@ public class StudentDAO {
 
     public boolean validateUser(List<Student> studentList, String studentEmail, String studentPass){
     	
-    	if((studentEmail).equals(setEmail) && (studentPass).equals(setPass)) {
+    		if((studentEmail).equals(setEmail) && (studentPass).equals(setPass)) {
 //    	if((studentEmail == setEmail) && (studentPass == setPass)) {
             System.out.println("Login Successful!");
         }
