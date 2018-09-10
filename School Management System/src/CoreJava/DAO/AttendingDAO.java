@@ -11,6 +11,8 @@ import java.util.List;
 
 public class AttendingDAO {
 
+	private List attendingList;
+	
     public List<Attending> getAttending(){
 		return null;
 
