@@ -16,17 +16,20 @@ public class MainRunner {
         System.out.println("1. Student");
         System.out.println("2. Quit");
         System.out.print("Answer: ");
+        
         Scanner in = new Scanner(System.in);
         int answer = in.nextInt();
-        if(answer == 1){
+        if(answer == 1) {
             StudentDAO studentDAO = new StudentDAO();
             List<Student> studentList = studentDAO.getStudents();
+            
             System.out.print("Enter your email: ");
             String email = in.nextLine();
+            
             System.out.print("Enter your password: ");
             String password = in.nextLine();
 
-            if(studentDAO.validateUser(studentList, email, password)){
+            if(studentDAO.validateUser(studentList, email, password)) {
                 CourseDAO courseDAO = new CourseDAO();
                 AttendingDAO attendingDAO = new AttendingDAO();
                 Student student = studentDAO.getStudentByEmail(studentList, email);
@@ -41,7 +44,7 @@ public class MainRunner {
                 System.out.print("Answer: ");
                 answer = in.nextInt();
 
-                if(answer == 1){
+                if(answer == 1) {
                     //Display a list of all Classes
                     allClasses(courseList);
                     System.out.print("Select Course by ID Number: ");
@@ -60,20 +63,20 @@ public class MainRunner {
         System.out.println("Closing Program. Goodbye.");
     }
 
-    public static void myClasses(Student student, List<Course> courseList, List<Attending> attendingList){
+    public static void myClasses(Student student, List<Course> courseList, List<Attending> attendingList) {
         System.out.println("My Classes: ");
         System.out.printf("%-5s|%-25s|%-25s", "#", "COURSE NAME", "INSTRUCTOR NAME");
         AttendingDAO attendingDAO = new AttendingDAO();
         List<Course> courses = attendingDAO.getStudentCourses(courseList, attendingList, student.getEmail());
-        for(Course course : courses){
+        for(Course course : courses) {
             System.out.printf("%-5s|%-25s|%-25s", course.getID(), course.getName(), course.getInstructor());
         }
     }
 
-    public static void allClasses(List<Course> courseList){
+    public static void allClasses(List<Course> courseList) {
         System.out.println("My Classes: ");
         System.out.printf("%-5s|%-25s|%-25s", "#", "COURSE NAME", "INSTRUCTOR NAME");
-        for(Course course : courseList){
+        for(Course course : courseList) {
             System.out.printf("%-5s|%-25s|%-25s", course.getID(), course.getName(), course.getInstructor());
         }
     }

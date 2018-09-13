@@ -5,9 +5,6 @@ public class Attending {
 	private int courseID;
 	private String studentEmail;
 	
-	public Attending () {
-		
-	}
 	
 	public Attending (int courseID, String studentEmail) {
 

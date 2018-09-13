@@ -6,9 +6,6 @@ public class Course {
 	private String name;
 	private String instructor;
 	
-	public Course () {
-		
-	}
 	
 	public Course(int ID, String name, String instuctor) {
 

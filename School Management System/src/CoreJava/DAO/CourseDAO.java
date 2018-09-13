@@ -1,32 +1,40 @@
 package CoreJava.DAO;
 
 import CoreJava.Models.Course;
-import CoreJava.Models.Student;
-
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.List;
 
-// show all courses
+// use filereader to show all courses in the csv file
+// print out the courselist
+
 
 public class CourseDAO {
 	
-	private List courseList;
-	
-    public List<Course> getAllCourses(int ID, String name, String instructor){
+	static List<Course> courseList = new ArrayList<Course>();
+
+    public List<Course> getAllCourses() {
     	
-    		courseList.add(courseID);
-    		return coursesList.getAllCourses();
+    	String coursesCSV = "/Users/nycda/Desktop/Final_Project/courses.csv";
+    	
+    	File file = new File(coursesCSV);
+    	BufferedReader reader;
+    	String course;
+    	
+		try {
+			reader = new BufferedReader(new FileReader(file));
+			while ((course = reader.readLine()) != null) {
+				String[] courseValues = course.split(",");
+				Course theCourse = new Course(Integer.parseInt(courseValues[0]), courseValues[1], courseValues[2]);   
+				courseList.add(theCourse);
+	    	}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    	return courseList;
     }
-    	     try {
-    	        List<Student> studentSameName = Course.get(student.name);
-    	        for(Student studentEntry : studentSameName){
-    	            if(studentEntry.getStudentId() == student.getStudentId()){
-    	                studentEntry.addCourse(courses);
-    	            }
-    	        }
-    	     }
-    	     catch(NullPointerException e){
-    	    
-    	     }
-    	 }
 			
 }
+

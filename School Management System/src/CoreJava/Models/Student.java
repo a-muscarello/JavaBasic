@@ -8,16 +8,15 @@ public class Student {
 	
 	public Student(String email, String name, String pass) {
 
-		super ();
 		this.email = email;
 		this.name = name;
 		this.pass = pass;
 	}
-
+// retrieve / read info
 	public String getEmail() {
 		return email;
 	}
-
+// update / set info
 	public void setEmail(String email) {
 		this.email = email;
 	}
